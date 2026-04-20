@@ -33,8 +33,27 @@ if page == "The Model":
     This model uses **XGBoost** to predict a Quarterback's PPA (Predicted Points Added) 
     for the upcoming season based on their previous performance.
     """)
-    st.image('feature_importance.png')
     
+    st.subheader("What features are most important to the model?")
+    st.image('feature_importance.png')
+
+    st.write("""
+    Feature Definitions:
+    - *prev_pass_td* = Number of a QB's Passing Touchdowns from previous season
+    - *dest_off_ppa* = Destination Team's previous season PPA
+    - *prev_pass_yds* = Number of a QB's Passing Yards from previous season
+    - *dest_sp_offence* = Destination Team's Offensive SP+ Rating
+    - *prev_avg_ppa* = QB's PPA from previous season
+    - *is_transfer* = No(0)/Yes(1) selection of whether a QB is a transfer
+    - *years_in_college* = Number of years/seasons a QB has played in college
+    """)
+    st.info("Many offensive stats are highlighted here, which is logical for the position. " \
+    "Predicting a QB's PPA is based on the combination of how well the QB and the Destination Team plays offensively.")
+
+    st.warning("Although *years_in_college* has a low importance score, and in the below SHAP value graph " \
+    "it has a neglegible effect on the PPA value- this feature was left in as the number of years/seasons a QB has played  " \
+    "is an overall important front office statistic when wanting to recruit *any* new player")
+
     st.subheader("What drives the predictions?")
     st.write("""
     The chart below shows **SHAP values**. 
@@ -45,6 +64,15 @@ if page == "The Model":
     """)
 
     st.image('shap_summary.png')
+    st.info("Generally speaking, if the QB and Destination Team have high values across all stats, " \
+    "the model is inclined to give a higher PPA score given the QB is *not* a transfer - as seen by the blue along *is_transfer*" \
+    "\n\n"
+    "However, if all stats have high values but the QB *is* a transfer, the model will apply a **Transfer Penality** resulting in a" \
+    "lower PPA as opposed to if the QB were to stay with their original team.")
+    
+    st.warning("*Note:* If a QB's stats have high values and they are a transfer, the PPA will be lower vs. the QB " \
+    "staying at their current school. If you apply the Destination Teams values into the model and change *is_transfer* to " \
+    "'NO', the result could be a potentially higher PPA for the QB at their new Destination School.")
 
 # --- PAGE 2: PREDICTION ---
 elif page == "Predict":
