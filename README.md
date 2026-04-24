@@ -6,7 +6,7 @@ A data-driven prototype tool that predicts a transfer quarterback's **Predicted 
 
 ## 🏈 Live App!
 
-> Click here: [QB PPA Predictor Streamlit App](https://qb-transfer-final-prototype.streamlit.app/)
+> Click here: [QB PPA Predictor Streamlit App](https://qb-transfer-final-prototype.streamlit.app/)\\
 > Enter a QB's previous season stats and destination team info to generate a predicted Post-PPA score.
 
 ---
