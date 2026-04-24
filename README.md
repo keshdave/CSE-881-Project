@@ -1,5 +1,4 @@
 # QB Transfer PPA Predictor
-### CSE 881 — Data Mining
 
 A data-driven prototype tool that predicts a transfer quarterback's **Predicted Points Added (PPA)** at a destination team using an XGBoost regression model. Built to help front office personnel make evidence-based decisions when evaluating QB targets from the transfer portal.
 
