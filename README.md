@@ -1,18 +1,18 @@
 # QB Transfer PPA Predictor
-### CSE 881 — Michigan State University
+### CSE 881 — Data Mining
 
 A data-driven prototype tool that predicts a transfer quarterback's **Predicted Points Added (PPA)** at a destination team using an XGBoost regression model. Built to help front office personnel make evidence-based decisions when evaluating QB targets from the transfer portal.
 
 ---
 
-## 🏈 Live App
+## 🏈 Live App!
 
-> **[QB PPA Predictor — Streamlit App](https://your-streamlit-link-here)**  
+> Click here: **[QB PPA Predictor]([https://your-streamlit-link-here](https://qb-transfer-final-prototype.streamlit.app/))**  
 > Enter a QB's previous season stats and destination team info to generate a predicted Post-PPA score.
 
 ---
 
-## 📁 Repository Structure
+## Repo Structure
 
 ```
 ├── app.py                        # Streamlit web application
@@ -36,7 +36,7 @@ A data-driven prototype tool that predicts a transfer quarterback's **Predicted 
 
 ---
 
-## 🔧 Features Used in Model
+## Features Used in Model
 
 | Feature | Description |
 |---|---|
@@ -50,7 +50,7 @@ A data-driven prototype tool that predicts a transfer quarterback's **Predicted 
 
 ---
 
-## 📊 Key Findings
+## Key Findings
 
 - **Transfer Penalty**: The model applies a measurable penalty to QBs who transfer, predicting a lower PPA compared to a non-transfer QB with identical stats.
 - **Age is not a penalty**: `years_in_college` had a negligible effect on predicted PPA, suggesting programs should not penalize older QBs in their evaluations.
@@ -58,13 +58,14 @@ A data-driven prototype tool that predicts a transfer quarterback's **Predicted 
 
 ---
 
-## 📂 Data Collection
+## Data Collection
 
 Raw data was pulled using the [`cfbfastR`](https://cfbfastr.sportsdataverse.org/) R package via `cfb_stats_pull_all.R`, covering CFB seasons **2018–2024**. Data includes player stats, team advanced metrics, SP+ ratings, transfer portal records, roster data, and recruiting profiles.
 
 ---
 
-## 👥 Group Members (Michigan State - Department of Statistics and Probability - MSDS)
+## Group Members
+_(Michigan State - Department of Statistics and Probability - MSDS)_
 - Archisha Bhatt
 - Keshavi Dave
 - Joey Larabee
